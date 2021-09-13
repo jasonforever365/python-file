@@ -1,0 +1,9 @@
+import tushare as ts
+import json
+with open("confi.json") as f:
+    json_str = json.load(f)
+ts.set_token(json_str["myToken"])
+pro = ts.pro_api()
+data = pro.stock_basic()
+print(data)
+
